@@ -27,8 +27,7 @@ jobs:
         run: |
             echo "listing files in the cm_pkg directory"
             ls cm_pkg
-      # a custom step that runs R code
+      # a custom step that runs Python code
       - name: Greet
         run: print("Hello, world!")
-        # Replace `shell: Rscript {0}` with `shell: python {0}` to run Python code instead!
         shell: python {0}
