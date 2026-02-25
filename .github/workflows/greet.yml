@@ -21,7 +21,7 @@ jobs:
     # list of steps in the workflow
     steps:
       # use an action provided by github to checkout the repo
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # a custom step that runs a couple shell commands
       - name: List
         run: |
