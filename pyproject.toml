@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python_prj"
+version = "0.0.1"
+authors = [
+  { name="Cristina Mitrea", email="mitrea@umich.edu" },
+]
+description = "A small example package"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+hello-world = "cm_pkg.module1:hello_world"
+greeting = "cm_pkg.module1:say_hello"
+simple_python_ui = "cm_pkg.ui.main_ui:main"
+
+
