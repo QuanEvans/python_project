@@ -47,8 +47,17 @@ jobs:
         black .
         flake8 --extend-ignore E203 --max-line-length 88 .
 
-    - name: Commit and push changes
+    - name: Commit changes
       run: |
         git add .
         git commit -m "🎨 Style code" || echo "No changes to commit"
-        git push origin HEAD:${GITHUB_REF_NAME}
+
+    - name: Push changes on push event
+      if: github.event_name == 'push'
+      run: |
+        git push origin HEAD:refs/heads/${GITHUB_REF_NAME}
+
+    - name: Push changes on pull_request event
+      if: github.event_name == 'pull_request'
+      run: |
+        git push origin HEAD:refs/heads/${GITHUB_HEAD_REF}
